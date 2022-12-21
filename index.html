@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab>p {
+            cursor: pointer;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .ex5>div>button {
+            position: absolute;
+            right: 10px;
+        }
+
+        .ex5 {
+            background-color: lightpink;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Example 1 -->
+    <div style="text-align: center;">
+        <p>Random number</p>
+        <h1 id="number">0</h1>
+        <button onclick="rndNumber()">Generate random number</button>
+    </div>
+    <hr>
+    <!-- Example 2 -->
+    <div id="ex2" onmousemove="moveMouse(event)" onmousedown="clickMouse(event)"
+        style="text-align: center; background-color: lightgreen; height:350px;">
+        <p id="cord">mouse in: </p>
+        <p id="click">click: </p>
+    </div>
+    <hr>
+    <!-- Example 3 -->
+    <div style="text-align: center;">
+        <button onclick="hideShowText()">Hide / show text</button>
+        <p id="hiddenText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsa voluptas iure iusto
+            dolorem, facilis aut labore sit quo quisquam dolores, laboriosam cumque eos, eius culpa fuga repellat
+            officia modi!
+        </p>
+    </div>
+    <hr>
+    <!-- Example 4 -->
+    <div style="display: flex; border: 1px solid lightseagreen;">
+        <div class="tab" style="background-color: lightseagreen;">
+            <p id="target1" onclick="showTab1(event)" style="background-color:lightgreen;">HTML</p>
+            <p id="target2" onclick="showTab2(event)">CSS</p>
+            <p id="target3" onclick="showTab3(event)">JS</p>
+        </div>
+        <p id="visibleText" style="background-color: lightgoldenrodyellow; padding: 10px; margin: 0; width: 100%;">
+            When all your life you did what other people told you to do for your own sake and suddenly the realisation
+            hits you that it led you down a path of unhappiness and it's taking you to a life where you will never be
+            happy but you know if you stray from the path you will face loneliness and a life where it's going also to
+            be very difficult to be happy
+        </p>
+    </div>
+    <hr>
+
+    <!-- Example 5 -->
+    <script>
+        // let buttons = document.querySelectorAll(`.ex5btn`);
+        // // for (let i =0; i<buttons.length;i++) {
+        // //     buttons[i].onclick = function (event) {
+        // //         alert("qwe");
+        // //         event.parentElement.remove();
+        // //     }
+        // // }
+        // buttons.forEach((btn) => {
+        //     btn.addEventListener('click', () => {
+        //         btn.parentElement.remove();
+        //     });
+        // });
+    </script>
+    <div class="ex5">
+        <div>
+            <button onclick="parentRemove(event)">X [remove]</button>
+            <h1>What is lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In aut laboriosam quisquam, sunt sapiente
+                temporibus alias, quas consectetur asperiores quam quibusdam nostrum earum dolores, possimus numquam
+                illum sint obcaecati dignissimos.</p>
+            <hr>
+        </div>
+        <div>
+            <button onclick="parentRemove(event)">X [remove]</button>
+            <h1> Why do we use it</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maiores saepe hic! Placeat maiores,
+                aliquid necessitatibus consequatur dicta saepe voluptates natus totam autem voluptate in doloremque
+                sequi soluta sunt excepturi vel vero qui! Odio, animi nesciunt! Doloribus repellendus amet provident
+                sunt quos aspernatur reprehenderit, alias unde corrupti ducimus, dolorum vero commodi, sint expedita
+                quae recusandae accusantium ipsam eligendi laudantium. Nam in a consequuntur corrupti molestias itaque
+                minima. Doloribus obcaecati voluptate perferendis dolore earum nostrum corrupti doloremque sequi ipsum
+                assumenda in hic harum inventore, facere veniam id ab quae, dignissimos voluptatibus quas illo minus
+                magni provident deserunt. Magni cupiditate praesentium quibusdam.</p>
+            <hr>
+        </div>
+        <div>
+            <button onclick="parentRemove(event)">X [remove]</button>
+            <h1>Where does it come from</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio a culpa ut molestias dolor doloribus
+                optio iste dolorum voluptatum ea eligendi, cupiditate totam dolorem id nulla fugiat porro suscipit quos
+                quasi odit facilis quidem eaque consequatur vero! Molestias, consectetur tenetur! Assumenda fugit
+                numquam nemo laudantium ratione vel eos ipsam aliquam!</p>
+            <hr>
+        </div>
+    </div>
+    <hr>
+    <!-- Example 6 -->
+    <div>
+        <progress id="bar" max="100" value="0"></progress>
+        <button onclick="addValueToProgress()">Add 5%</button>
+    </div>
+    <hr>
+    <!-- Example 7 -->
+    <div>
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Company</th>
+            </tr>
+            <tr>
+                <td id="enterTd1">Bill</td>
+                <td id="enterTd2">Gates</td>
+                <td id="enterTd3">Microsoft</td>
+            </tr>
+            <tr>
+                <td id="enterTd4">Timothy</td>
+                <td id="enterTd5">Cook</td>
+                <td id="enterTd6">Apple</td>
+            </tr>
+            <tr>
+                <td id="enterTd7">Larry</td>
+                <td id="enterTd8">Page</td>
+                <td id="enterTd9">Google</td>
+            </tr>
+            <tr>
+                <td id="enterTd10">Mark</td>
+                <td id="enterTd11">Zuckerberg</td>
+                <td id="enterTd12">Facebook</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <!-- Example 8 -->
+    <div id="noCopyDiv" style="background-color: yellowgreen;">
+        <h2>NO SELECT! NO CONTEXT MENU</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio nisi ipsum eaque sed quis aperiam tempore
+            voluptatibus soluta. Quia ipsa soluta id enim a repellat laudantium debitis maiores distinctio vitae. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Vero obcaecati mollitia voluptatum, hic voluptatibus
+            natus quisquam, dolor aut delectus, repellat fugit praesentium eveniet ab ea nobis animi consectetur id
+            suscipit nostrum quibusdam. Dolorem, non odio optio repellat delectus accusantium nobis beatae neque
+            dignissimos placeat! Odio adipisci culpa necessitatibus, minus nam corrupti dolorem ad accusamus rem aliquid
+            sunt odit, laudantium sequi maiores illo iste explicabo ratione mollitia nulla aspernatur. Quasi culpa iure
+            placeat iste recusandae natus distinctio, quaerat eligendi, sed impedit aspernatur exercitationem id
+            reiciendis eum totam? Corporis ipsum itaque velit veritatis in, voluptates adipisci minima optio? Inventore
+            magnam voluptas illum?</p>
+    </div>
+    <hr>
+    <!-- Example 9 -->
+    <div>
+        <button id="likeBtn" onclick="like(event)" style="display: flex; border-radius: 10px; background-color: lightskyblue;">
+            <img id="likeImg" src="like.png" width="32px" style="margin: 5px;">
+            <p style="margin: 10px; font-size: 20px; font-family: Consolas;">Like</p>
+            <p id="likeValue" style="margin: 10px; font-size: 20px; font-family: Consolas;">45</p>
+        </button>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js" text="text/javascript"></script>
+</body>
+
+</html>
